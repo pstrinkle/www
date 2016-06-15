@@ -1,0 +1,10 @@
+<div class="mainheader">about</div>
+	<div class="boxitem">
+		<p class="body">- <a href="/about.php?page=disclaimer" class="norm">disclaimer</a><br>
+				   - <a href="/about.php?page=help" class="norm">help</a><br>
+				   - <a href="/about.php?page=news" class="norm">news</a><br>
+				   - <a href="/about.php?page=sitemap" class="norm">sitemap</a></p><br>
+</div>
+<br><br>
+
+

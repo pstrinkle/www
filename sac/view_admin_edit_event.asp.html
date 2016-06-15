@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="content-style-type" contect="text/css">
+<link rel="stylesheet" href="main.css" charset="iso-8859-1" type="text/css">
+
+<!-- #include file="var.inc" -->
+<%
+Dim select1
+dim select3
+
+select1 = Request.QueryString("num")
+select3 = Trim(request.form("strID"))
+%>
+</head>
+<body bgcolor="#000000">
+<%
+If select1 = "-" Then
+select1 = ""
+End If
+
+%>
+<% 
+set con = Server.CreateObject("ADODB.Connection")
+con.Open "DBQ="& DbFile2 &";Driver={Microsoft Access Driver (*.mdb)};DriverId=25;FIL=MS Access;"
+sql="SELECT * FROM tblPWord WHERE (num) LIKE '" & select1 & "' ;"
+
+Set rs = Server.CreateObject("ADODB.Recordset")
+	rs.Open sql, con, 3, 3
+
+select2 = rs.Fields("LName").Value
+If select2 <> "Trinkle" Then
+Response.Redirect "index.asp"
+End If
+
+If rs.EOF Then
+Response.Redirect "index.asp"
+End If
+%>
+
+<img src="_images/_mainmenu/logo_sac.gif" border="0" alt="Welcome">
+<table border="0" cellpadding="0" cellspacing="0"  width="700" bgcolor="#000000" height="25">
+<tr>
+<td width="75" height="25"><img src="_images/sac_menu.gif"></td>
+<td align="left" valign="top"><p class="menuon">
+<img src="_images/leftarrow.gif" align="absmiddle"><b>administrator controls</b><img src="_images/rightarrow.gif" align="absmiddle">
+</td>
+</tr>
+</table>
+<table background="_banners/binary_back.gif" width="800" border="2" cellpadding="0" cellspacing="0">
+<tr><td bgcolor="#335A99" valign="top" bordercolor="#C0C0C0" border="2">
+<h3 class="bodygrey">Welcome, <%=rs.Fields("FName").Value %> to the Events Control Center</h3>
+
+<table border="2" bordercolor="#000000" align="center" width="600" bgcolor="#000000">
+<%
+DbFile4="d:\www.1shoe.net\data\test\sac_events.mdb"
+
+set con2 = Server.CreateObject("ADODB.Connection")
+con2.Open "DBQ="& DbFile4 &";Driver={Microsoft Access Driver (*.mdb)};DriverId=25;FIL=MS Access;"
+sql2="SELECT * FROM tblEvents WHERE ID LIKE '" & select3 & "' ;"
+
+Set rs2 = Server.CreateObject("ADODB.Recordset")
+	rs2.Open sql2, con2, 3, 3
+%>
+<form action="eng_editevent.asp" method="post" name="form">
+<tr><td valign="top" align="center"><img src="_images/_admin/editbar.gif"></td></tr>
+<tr>
+<td bgcolor="#1E1E56" valign="top">
+<p class="bodygrey">Title:<input name="strTitle" type="text" value="<%=rs2.Fields("Title").Value %>"><br>
+Date:<input name="strDate" type="text" value="<%=rs2.Fields("Date").Value %>">(MMDDYR)<br>
+(i.e. 080503)</p>
+<p class="bodygrey">Details:<br>
+<textarea name="strDetails" cols="60" rows="5" class="txtbox2"><%=rs2.Fields("Details").Value %></textarea>
+<input name="strNum" type="hidden" value="<%=select1 %>">
+<input name="strID" type="hidden" value="<%=rs2.Fields("ID").Value %>">
+</p>
+</td>
+</tr>
+<tr><td align="right">
+<input name="btnWords" type="image" value="eng_editevent.asp" src="_images/_admin/edit.gif" alt="Post!">
+</td></tr>
+</form>
+</table>
+<br><br>
+</td></tr>
+<tr>
+<td bordercolor="#000000">
+<img src="_banners/oneshoe_lownews.gif" border="0" alt="OneShoeProgramming tampered with this Database">
+</td>
+</tr>
+</table>
+<%
+rs2.Close
+con2.Close
+Set rs2 = Nothing
+Set con2 = Nothing
+%>
+<!-- #include file="footer.inc" -->
+
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="content-style-type" contect="text/css">
+<link rel="stylesheet" href="main.css" charset="iso-8859-1" type="text/css">
+
+<!-- #include file="var.inc" -->
+<%
+Dim select1
+dim select2
+select1 = Trim(request.form("strName"))
+select2 = Trim(request.form("strWord"))
+%>
+</head>
+<body bgcolor="#000000">
+<%
+If select1 = "-" Then
+select1 = ""
+End If
+If select2 = "-" Then
+select2 = ""
+End If
+%>
+<% 
+set con = Server.CreateObject("ADODB.Connection")
+con.Open "DBQ="& DbFile2 &";Driver={Microsoft Access Driver (*.mdb)};DriverId=25;FIL=MS Access;"
+sql="SELECT * FROM tblPWord WHERE (Login) LIKE '" & select1 & "' AND (PWord) LIKE '" & select2 & "' ;"
+
+Set rs = Server.CreateObject("ADODB.Recordset")
+	rs.Open sql, con, 3, 3
+
+%>
+
+<%
+If rs.EOF Then
+%>
+
+<table align="center" bgcolor="#000000">
+<form action="view_admin.asp" method="post" name="strLog">
+<tr>
+
+<td><input name="strName" type="text" class="txtbox" accesskey="L" tabindex="0" onClick="value=''" value="Login" size="15"></td>
+</tr>
+<tr>
+
+<td><input name="strWord" type="password" class="txtbox" onClick="value=''" size="15"></td>
+</tr>
+<tr>
+<td colspan="2" align="center"><input name="btnWords" type="image" value="view_admin.asp" src="_images/_admin/admin.gif" alt="Enter!"></td>
+</tr></form></table>
+
+<% 
+Else 
+
+dim select3
+dim select4
+
+select3 = rs.Fields("LName").Value
+select4 = rs.Fields("FName").Value
+
+If select3 <> "Trinkle" or select4 <> "Patrick" Then
+Response.Redirect "index.asp"
+End If
+
+
+%>
+<img src="_images/_mainmenu/logo_sac.gif" border="0" alt="Welcome">
+<table border="0" cellpadding="0" cellspacing="0"  width="700" bgcolor="#000000" height="25">
+<tr>
+<td width="75" height="25"><img src="_images/sac_menu.gif"></td>
+<td align="left" valign="top"><p class="menuon">
+<img src="_images/leftarrow.gif" align="absmiddle"><b>administrator controls</b><img src="_images/rightarrow.gif" align="absmiddle">
+</td>
+</tr>
+</table>
+<table background="_banners/binary_back.gif" width="800" border="2" cellpadding="0" cellspacing="0">
+<tr><td bgcolor="#335A99" valign="top" bordercolor="#C0C0C0" border="2">
+<h3 class="bodygrey">Welcome, <%=rs.Fields("FName").Value %> to the Administrator Control Center</h3>
+<table border="2" bordercolor="#000000" align="center" bgcolor="#000000">
+<tr>
+<td colspan="3" align="center"><img src="_images/_admin/pcontrols.gif"></td>
+</tr>
+<tr><td align="center"><img src="_images/_admin/messageboard.gif"></td>
+<td align="center"><img src="_images/_admin/events.gif"></td>
+<td align="center"><img src="_images/_admin/members.gif"></td>
+</tr>
+<tr>
+<td valign="top" border="2" bgcolor="#335A99" width="250">
+<p class="bodygrey">
+<a href="view_admin_mb.asp?num=<%=rs.Fields("num").Value %>" class="org">_controls</a></p>
+<p class="bodygrey">
+-delete messages<br>
+-delete strings
+</p>
+
+</td>
+<td valign="top" bgcolor="#335A99" width="250">
+<p class="bodygrey">
+<a href="view_admin_event.asp?num=<%=rs.Fields("num").Value %>" class="org">_controls</a></p>
+<p class="bodygrey">
+-add event<br>
+-edit event<br>
+-delete event
+</p>
+</td>
+<td valign="top" bgcolor="#335A99" width="250">
+<p class="bodygrey">
+<a href="view_admin_member.asp?num=<%=rs.Fields("num").Value %>" class="org">_controls</a></p>
+<p class="bodygrey">
+-add member<br>
+-edit member<br>
+-delete member
+</p>
+</td>
+</tr>
+</table>
+<br><br>
+</td></tr>
+<tr>
+<td bordercolor="#000000">
+<img src="_banners/oneshoe_lownews.gif" border="0" alt="OneShoeProgramming tampered with this Database">
+</td>
+</tr>
+</table>
+<% 
+End If 
+%>
+
+<!-- #include file="footer.inc" -->
+
+
+</body>
+</html>

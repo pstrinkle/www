@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>SAC Roster</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="content-style-type" contect="text/css">
+<link rel="stylesheet" href="main.css" charset="iso-8859-1" type="text/css">
+<!-- #include file="var.inc" -->
+<%
+select1 = Request.QueryString("num")
+If select1 = "" Then
+Response.Redirect "index.asp"
+End If
+%>
+</head>
+
+<% 
+set con = Server.CreateObject("ADODB.Connection")
+con.Open "DBQ="& DbFile2 &";Driver={Microsoft Access Driver (*.mdb)};DriverId=25;FIL=MS Access;"
+sql="SELECT * FROM tblPWord ORDER BY (LName) ;"
+
+sql2="SELECT * FROM tblPWord WHERE (num) LIKE '" & select1 & "' ;"
+Set rs = Server.CreateObject("ADODB.Recordset")
+	rs.Open sql, con, 3, 3
+Set rs2 = Server.CreateObject("ADODB.Recordset")
+	rs2.Open sql2, con, 3, 3
+	
+If rs2.EOF Then
+Response.Redirect "index.asp"
+End If
+%>
+<body bgcolor="#000000">
+<img src="_images/_mainmenu/logo_sac.gif" border="0" alt="Welcome">
+<table border="0" cellpadding="0" cellspacing="0"  width="700" bgcolor="#000000" height="25">
+<tr>
+<td width="75" height="25"><img src="_images/sac_menu.gif"></td>
+<td align="left" valign="top"><p class="menuon">
+<a href="view_sac.asp?num=<%=rs2.Fields("num").Value %>" class="menu" onMouseOver="window.status='SAC - Main'; return true" onMouseOut="window.status='';return true">_sac</a>
+| <a href="view_mb.asp?num=<%=rs2.Fields("num").Value %>" class="menu" onMouseOver="window.status='The Messageboard'; return true" onMouseOut="window.status='';return true">_messageboard</a>
+| <a href="view_events.asp?num=<%=rs2.Fields("num").Value %>" class="menu" onMouseOver="window.status='The Events'; return true" onMouseOut="window.status='';return true">_events</a>
+| <a href="view_acc.asp?num=<%=rs2.Fields("num").Value %>" class="menu" onMouseOver="window.status='Your Account'; return true" onMouseOut="window.status='';return true">_account</a>
+| <a href="view_chapter.asp?num=<%=rs2.Fields("num").Value %>" class="menu" onMouseOver="window.status='The Chapters - Main'; return true" onMouseOut="window.status='';return true">_chapters</a>
+|<img src="_images/leftarrow.gif" align="absmiddle"><b>Roster</b><img src="_images/rightarrow.gif" align="absmiddle">
+| <a href="view_blueteam.asp?num=<%=rs2.Fields("num").Value %>" class="menu" onMouseOver="window.status='Blue Team!'; return true" onMouseOut="window.status='';return true">_blue team</a>
+| <a href="view_policy.asp?num=<%=rs2.Fields("num").Value %>" class="menu" onMouseOver="window.status='Policy'; return true" onMouseOut="window.status='';return true">_policy</a></td>
+</tr>
+</table>
+<table background="_banners/binary_back.gif" width="800" border="2" cellpadding="0" cellspacing="0">
+<tr><td bgcolor="#335A99" bordercolor="#C0C0C0">
+<h3 class="bodygrey"><%=rs2.Fields("FName").Value %>, <a name="top"></a>The Registered Membership:</h3>
+<table align="center" width="750"><tr><td valign="top">
+
+<table bgcolor="#000000" width="500" border="2" bordercolor="#000000">
+<tr><td align="center">
+<img src="_images/sac_members.gif">
+</td></tr>
+<tr><td>
+<hr width="500" align="left">
+<table bgcolor="#335A99" width="500">
+<%	
+rs.MoveFirst
+While Not rs.EOF
+%>
+<!-- #include file="search_sac.inc" -->
+<%
+	rs.MoveNext 
+Wend
+%>
+</table></td></tr>
+<tr><td><p class="bodygrey">More Information will be posted once this system is in full swing.</p></td></tr>
+</table>
+<br>
+</td><td valign="top">
+<table bgcolor="#000000" border="2" bordercolor="#2931CA" height="25" width="200">
+<form action="view_dir.asp?num=<%=rs2.Fields("num").Value %>" method="post" name="form">
+<tr bordercolor="#000000">
+<td valign="top" align="center"><img src="_images/sac_searchbar.gif"></td></tr>
+<tr>
+<td valign="top">
+<select name="strType">
+<option selected>Last Name</option>
+<option>First Name</option>
+<option>Login</option>
+</select></td></tr><tr><td valign="top">
+<input name="strSearch" type="text" class="textbox" onClick="value=''" value="Type Here!" size="20">
+</td></tr><tr>
+<td valign="top" align="right">
+<input name="btnSearch" type="image" value="view_dir.asp" src="_images/sac_search.gif" alt="Search!"></td>
+</tr>
+</form>
+</table>
+</td></tr></table>
+
+</td></tr>
+<tr>
+<td width="700" bordercolor="#000000">
+<img src="_banners/oneshoe_lownews.gif" border="0" alt="OneShoeProgramming tampered with this Database">
+</td>
+</tr>
+</table>
+<!-- #include file="dir_footer.inc" -->
+
+
+
+</body>
+</html>

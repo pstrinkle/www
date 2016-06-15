@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="content-style-type" contect="text/css">
+<link rel="stylesheet" href="main.css" charset="iso-8859-1" type="text/css">
+
+</head>
+<%
+DbFile4 = "d:\www.1shoe.net\data\test\sac_events.mdb"
+%>
+<%
+dim select1
+dim select2
+dim select3
+dim select4
+
+
+select1 = Trim(request.form("strNum"))
+select2 = Trim(request.form("strTitle"))
+select3 = Trim(request.form("strDate"))
+select4 = Trim(request.form("strDetails"))
+
+select2 = Replace(select2, "''", " ")
+select2 = Replace(select2, "%", " ")
+select4 = Replace(select4, "''", " ")
+select4 = Replace(select4, "%", " ")
+select4 = Replace(select4, "-P-","<br><br>")
+
+dim rsAddNewComments
+dim con
+dim strSql
+
+Response.Buffer = True
+%>
+
+
+<body bgcolor="#FFFFFF">
+
+
+<% 
+IF select2 <> "" and select4 <> "" Then
+
+Set con = Server.CreateObject("ADODB.Connection")
+con.Open "DBQ="& DbFile4 &";Driver={Microsoft Access Driver (*.mdb)};DriverId=25;FIL=MS Access;"
+strSql = "SELECT * FROM tblEvents ORDER BY ID DESC;"
+Set rsAddNewComments = Server.CreateObject("ADODB.Recordset")
+rsAddNewComments.CursorType = 2
+rsAddNewComments.LockType = 3
+rsAddNewComments.Open strSql, con
+rsAddNewComments.AddNew
+rsAddNewComments.Fields("Title") = select2
+rsAddNewComments.Fields("Date") = select3
+rsAddNewComments.Fields("Details") = select4
+rsAddNewComments.Update
+rsAddNewComments.Close
+con.Close
+Set rsAddNewComments = Nothing
+Set con = Nothing
+
+Response.Redirect "view_admin_event.asp?num=" & select1 & ""
+Else
+Response.Redirect "view_admin_event.asp?num=" & select1 & ""
+End If
+
+
+%>
+
+
+
+
+
+
+</body>
+</html>

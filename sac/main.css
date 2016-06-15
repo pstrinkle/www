@@ -1,0 +1,224 @@
+BODY
+{
+    SCROLLBAR-FACE-COLOR: #3D4CA0;
+    SCROLLBAR-HIGHLIGHT-COLOR: #69c;
+    SCROLLBAR-SHADOW-COLOR: #036;
+    SCROLLBAR-ARROW-COLOR: red;
+    SCROLLBAR-BASE-COLOR: #036;
+    scrollbar-3d-light-color: #369;
+    scrollbar-dark-shadow-color: #036
+}
+p.small
+{
+	FONT-FAMILY: "Times New Roman", Times, serif;
+	FONT-SIZE: x-small;
+}
+
+p.terriblysmall
+{
+	FONT-FAMILY: "Times New Roman", Times, serif;
+	FONT-SIZE: xx-small;
+}
+
+p.urgent
+{
+	FONT-FAMILY: "Times New Roman", Times, serif;
+	FONT-SIZE: small;
+	COLOR: red;
+}
+
+.bodyblue
+{
+	COLOR: #0099FF;
+	FONT-FAMILY: "Times New Roman", Times, serif;
+	FONT-SIZE: 12pt;
+}
+
+p.bodytext
+{
+	COLOR: black;
+	FONT-FAMILY: "Times New Roman", Times, serif;
+	FONT-SIZE: 12pt;
+}
+
+
+
+.bodyred
+{
+	COLOR: red;
+	FONT-FAMILY: "Times New Roman", Times, serif;
+}
+
+.bodywhite
+{
+	COLOR: white;
+	FONT-FAMILY: "Times New Roman", Times, serif;
+	FONT-SIZE: 12pt;
+}
+
+.bodygrey
+{
+	COLOR: #CCC;
+	FONT-FAMILY: "Times New Roman", Times, serif;
+	FONT-SIZE: 12pt;
+}
+
+.titleblue
+{
+	COLOR: #0099FF;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+}
+
+.titletext
+{
+	COLOR: black;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+}
+
+.titlewhite
+{
+	COLOR: white;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+}
+h1.heading
+{
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	FONT-WEIGHT: bold;
+	COLOR: #0099FF;
+}
+
+h2.title
+{
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	FONT-WEIGHT: bold;
+}
+
+a:link
+{
+	COLOR: #CCCCCC;
+}
+
+a.org:link
+{
+	COLOR: #A67C52;
+}
+
+a.org:hover
+{
+	COLOR: #000000;
+}
+
+a.org:visited
+{
+	COLOR: #7B0707;
+}
+
+a.org:active
+{
+	COLOR: #7B0707;
+}
+
+a.mblist
+{
+	COLOR: #CCCCCC;
+}
+a.mblist:link
+{
+	COLOR: #A67C52;
+}
+a.mblist:hover
+{
+	COLOR: #0099FF;
+}
+a.mblist:visited
+{
+	COLOR: #FFFFFF;
+}
+a.mblist:active
+{
+	COLOR: #FFFFFF;
+}
+
+a.onblue:link
+{
+	COLOR: #CCCCCC;
+}
+
+a.onblue:hover
+{
+	COLOR: #FFFFFF;
+}
+
+a.white:link
+{
+	COLOR: #FFFFFF;
+}
+
+a:hover
+{
+	COLOR: #006699;
+}
+
+a.onwhite:link
+{
+	COLOR: #006699;
+}
+
+a:visited
+{
+	COLOR: #999999;
+}
+
+a:active
+{
+	COLOR: #000000;
+}
+a.onblack:visited
+{
+	COLOR: #FFFFFF;
+}
+.blue
+{
+	bgcolor: #498FCD
+}
+
+.txtbox
+{
+	color: #2931CA;
+	background-color: #000000;
+}
+.txtbox2
+{
+	color: #2931CA;
+	background-color: #FFFFFF;
+}
+.menuon
+{
+	COLOR: 2931CA;
+	FONT-FAMILY: "Times New Roman", Times, serif;
+	FONT-SIZE: 12pt;	
+}
+a.menu:link
+{
+	COLOR: C0C0C0;
+	FONT-FAMILY: "Times New Roman", Times, serif;
+	FONT-SIZE: 12pt;
+}
+a.menu:visited
+{
+	COLOR: C0C0C0;
+	FONT-FAMILY: "Times New Roman", Times, serif;
+	FONT-SIZE: 12pt;
+}
+a.menu:active
+{
+	COLOR: 2931CA;
+	FONT-FAMILY: "Times New Roman", Times, serif;
+	FONT-SIZE: 12pt;
+}
+a.menu:hover
+{
+	COLOR: 2931CA;
+	FONT-FAMILY: "Times New Roman", Times, serif;
+	FONT-SIZE: 12pt;
+}

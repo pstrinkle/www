@@ -1,0 +1,12 @@
+<div class="mainheader">rss</div>
+		<div class="boxitem">
+		<p class="body">RSS (Really Simple Syndication) provides 
+                    a convenient way to gather and quickly browse information 
+                    from a variety of online sources, to include press releases, 
+                    product updates, or changes to a web site. Specified content 
+                    is gathered and arranged in a &quot;feed.&quot; Feeds are 
+                    generally a headline, linking to an article or other content. 
+                    An RSS reader interprets the &quot;live bookmark&quot;, such 
+                    as <a href="http://www.mozilla.org/" target="_blank" class="norm">Mozilla Firefox</a>.</p><br>
+			</div>
+<br><br>

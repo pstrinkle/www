@@ -1,0 +1,7 @@
+<div class="mainheader">error</div>
+		<div class="boxitem">
+		<p class="alert">No such page exists here. Sorry.</p><br>
+			</div>
+<br><br>
+
+

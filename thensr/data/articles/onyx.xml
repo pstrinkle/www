@@ -1,0 +1,93 @@
+<title>Onyx: The big power sucker that did</title>
+<author>James Smyth</author>
+<img>nsr_images/_articles/_smalls/onyx.jpg</img>
+<date>11/27/2005</date>
+<area>linux</area>
+<body><p class="body">Once in the land of Mountain View in the great kingdom of Silicon Valley there was the magical company Silicon Graphics Incorperated. The time is 1993, stock was going up, virtual reality was all the buzz, and the company was ready to release their latest and greatest graphics supercomputer for the easily affordable price of $750,000. The Onyx.</p>
+<p class="body">
+Now the year is 2005, SGI has filed Chapter 11, the sobering reality of the dot com crash still fresh in memory, and the 3/4 of a million dollars machine costs less than its shipping on ebay (assuming anyone feels it's worth the price of shipping, as it requires a truck). Luckily for me, on the University's LUG mailing list was a resident in Baltimore who was moving out of his apartment and didn't feel like moving the Onyx in his basement, so it went free to whoever could take care of it. With a friend's van, too much time, and a sore back in the morning, I now have it in my room.</p>
+<p class="body" align="center">Here's a photo of the deskside beast:<br>
+<a href="javascript:nothing()" onclick="window_load('nsr_images/_articles/onyx/onyx.jpg', '550', '602')"><img src="nsr_images/_articles/onyx/onyx_sm.jpg" border="0"></a></p>
+<p class="body">
+So let's start with specs.<br>
+Processor: 4 x 195mhz R10k MIPS<br>
+Memory: 1536 (across 32 sticks)<br>
+Storage: 4 drives totaling around 18gigs<br>
+
+Graphics: Infinate Reality w/ two Raster Managers and 8 channel option<br>
+Oh! And I musn't forget to mention it has a CD-ROM! Wow!</p>
+<p class="body">The most important thing to remember about the Onyx is that it's not a PC. The whole architecture is different. Even the concept of the 'motherboard' doesn't apply here.</p>
+<p class="body">
+Now the basic unit. The 'chassis' if you will. First, let's pull back the main access panel.</p>
+<p class="body" align="center"><a href="javascript:nothing()" onclick="window_load('nsr_images/_articles/onyx/cover-panel-open.jpg', '541', '588')"><img src="nsr_images/_articles/onyx/cover-panel-open_sm.jpg" border="0"></a><br>
+This gives you access to the control panel and all the drives. As you can see, there are five drives installed (One CD-ROM and four hard drives).</p>
+<p class="body" align="center"><a href="javascript:nothing()" onclick="window_load('nsr_images/_articles/onyx/panel-open-with-drive.jpg', '460', '609')"><img src="nsr_images/_articles/onyx/panel-open-with-drive_sm.jpg" border="0"></a><br>
+Here you can see one of the drives pulled part of the way out.</p>
+<table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td valign="top"><a href="javascript:nothing()" onclick="window_load('nsr_images/_articles/onyx/hd-sled.jpg', '367', '600')"><img src="nsr_images/_articles/onyx/hd-sled_sm.jpg" border="0"></a></td><td valign="top"><p class="body">Here's an up and close view of a drive on a sled. This is a fairly typical layout of a server type SCSI sled. Also notice that it there are two places to plug the data link of the drive in. Why is this? One is for single-ended, and the other is for differential. The difference is very technical, It comes to single-ended being less costly, and differential yeilding more reliable data transfer. It's important to know which your drive uses when installing as while they have the same form factor, they have different pin configurations.</p></td></tr></table>
+
+<p class="body"><a href="javascript:nothing()" onclick="window_load('nsr_images/_articles/onyx/hd1.jpg', '600', '453')"><img src="nsr_images/_articles/onyx/hd1_sm.jpg" border="0"></a><br>
+Here we have the root drive at the top of the rack. Apparently it came with IRIX 6.5.11f installed, I'll guess the last time this machine was upgraded between February 7th and May 9th 2001. And was later upgraded to InfiniteReality graphics (RE2 in this image indicates it was using Reality Engine 2 graphics when the drive was installed). One other drive is labeled as /usr/freeware. The Freeware library is a collection of open source software that SGI maintained for IRIX. Now considered crappy and rarely updated (last was May 2004) the hobbyist community has created their own collection at <a href="http://www.nekochan.net" target="_blank">www.nekochan.net</a></p>
+<p class="body"><a href="javascript:nothing()" onclick="window_load('nsr_images/_articles/onyx/display-panel.jpg', '600', '339')"><img src="nsr_images/_articles/onyx/display-panel_sm.jpg" border="0"></a><br>
+Here is a blurrier, but better image of the control panel. That key? No, that doesn't lock the case, it's the power switch (in case you can't tell from the 'open' and 'closed' symbols). Maybe you don't want the night janitor turning it off to plug in the floor buffer, or maybe you don't want someone turning on the machine and having it suck 16 amps. In any event, it is there for you. You'll notice there's an additional selection with a tool chest and wrench, this is for maintenance mode, which I have yet to play around with. Now, the lit LCD display on front will display numerous boot messages as the machine turns on, and will notify you if someone is wrong with the hardware. When in maintenance mode you can use the buttons on the bottom to navigate the diagnostics options. The little thingy on the right is to lock the front door of the machine (it's not a key lock or anything, it's just to hold the door in place.)</p>
+<p class="body">On to power.<br><a href="javascript:nothing()" onclick="window_load('nsr_images/_articles/onyx/ps-toscale.jpg', '516', '575')"><img src="nsr_images/_articles/onyx/ps-toscale_sm.jpg" border="0"></a></p>
+<p class="body">
+It's a big peice of metal, and definately not user servicable. Did I mention this thing draws 16 amps on a 115V circuit (12 amps on 200V)? Of course I did. So you might expect some some serious watt suckage. Take a look at the label:<br>
+<a href="javascript:nothing()" onclick="window_load('nsr_images/_articles/onyx/ps-text.jpg', '306', '477')"><img src="nsr_images/_articles/onyx/ps-text_sm.jpg" border="0"></a></p>
+<p class="body">
+Yeah, that's wright, it pulls down 1500 watts on a 115V circuit, and 1900W on a 200V. Scary huh? Defiantely don't want to keep this baby on any longer than you have to. In fact, the power requirements make the machine use that special kind of plug that'll make the machine fit snuggly between the washer and dryer (but I wouldn't recommend it.)</p>
+<p class="body" align="center"><a href="javascript:nothing()" onclick="window_load('nsr_images/_articles/onyx/power-plug.jpg', '522', '421')"><img src="nsr_images/_articles/onyx/power-plug_sm.jpg" border="0"></a></p>
+
+<p class="body">
+The university apartments certainly don't cater to this plug type. So I cheated and bought a normal north-american three pronged cord to replace it and haven't started any fires yet.</p>
+<p class="body">Now, on to interfaces:<br>
+<a href="javascript:nothing()" onclick="window_load('nsr_images/_articles/onyx/front.jpg', '417', '600')"><img src="nsr_images/_articles/onyx/front_sm.jpg" border="0"></a></p>
+<p class="body">Lots of places to plug stuff in. Let's try and pair it down.<br>
+<a href="javascript:nothing()" onclick="window_load('nsr_images/_articles/onyx/bottom-front.jpg', '700', '338')"><img src="nsr_images/_articles/onyx/bottom-front_sm.jpg" border="0"></a></p>
+<p class="body">
+Now we can see the labels a bit more clearly. Everything you see above this portion in the previous image is from add-ons. What you see down here is the standard issue interface for the Onyx. For those of you unfamiliar with the 13W3 plug, that's what we see under 'chan 0' and 'chan 1'. This is the monitor connection standard for SGI and Sun machines. It yeilds higher quality video, but the cables tend to be bulkier and are more expensive to make. Flanking these on the left and right are BNC connectors sync, genlock, etc. What these are is beyond the scope of this documentation, but anyone working in professional video should be able to give you a run down it. You'll notice the network interface is both in our familiar RJ45 and the serial-type connector which was more popular in the early 90s. To the right we see the serial interfaces (notice that the connectors below them aren't old-style PC keyboard connectors, but are for powering peripheral serial devices). Also notice to the bottom left what we see are not for audio equipment, but are 'interrupts', which to be honest, I don't know what they're for. And then in the upper left we see the consumer video output options and a stereo plug (not a serial plug, this is for stereo shutter LCD glasses).</p>
+<p class="body" align="center"><a href="javascript:nothing()" onclick="window_load('nsr_images/_articles/onyx/front-right.jpg', '407', '700')"><img src="nsr_images/_articles/onyx/front-right_sm.jpg" border="0"></a></p>
+<p class="body">
+Now this machine has something very special that you aren't likely to see on too many other Onyxs (besides the also rare audio module). That is the six extra monitor outputs. The Display Generator in this particular Onyx came with the eight-channel option which lets you use eight simutaneous monitors. Anyway, onward we go. On the bottom we see six additional serial plugs (for a total of ten). Then we have three additional SCSI connectors (these can be hard to use, as many SCSI cables are very bulky and not flexible enough to close the machine's door). And finally we see two additional RJ45 ethernet connections.</p>
+<p class="body">
+
+Okay, that about covers the front of the machine. We won't do the back as there's nothing there but the power plug. Let's pull back the curtain and look at the ugly magic behind it.</p>
+<table width="100%" border="0" cellpadding="0" cellspacing="0"><tr>
+<td><a href="javascript:nothing()" onclick="window_load('nsr_images/_articles/onyx/front-opening.jpg', '700', '528')"><img src="nsr_images/_articles/onyx/front-opening_sm.jpg" border="0"></a></td>
+<td><a href="javascript:nothing()" onclick="window_load('nsr_images/_articles/onyx/front-open.jpg', '474', '700')"><img src="nsr_images/_articles/onyx/front-open_sm.jpg" border="0"></a></td>
+</tr></table>
+<p class="body">
+Now this isn't entirely what the inside looks like, as my two Raster Managers and the graphics bridge are removed here. Now, let's talk about architecture. Every major component is on its own board.</p>
+<p class="body">The quad-CPUs:<br>
+<a href="javascript:nothing()" onclick="window_load('nsr_images/_articles/onyx/proc.jpg', '643', '700')"><img src="nsr_images/_articles/onyx/proc_sm.jpg" border="0"></a></p>
+<p class="body">The populated memory board:<br>
+<a href="javascript:nothing()" onclick="window_load('nsr_images/_articles/onyx/memory.jpg', '700', '656')"><img src="nsr_images/_articles/onyx/memory_sm.jpg" border="0"></a></p>
+<p class="body">
+Other non-graphical stuff (SCSI controller, basic network controller, etc) is on two boards that are connected and would require too much cable unplugging to remove. So here I'm just pulling out the cables to show you where they're connected.<br>
+
+<a href="javascript:nothing()" onclick="window_load('nsr_images/_articles/onyx/cable-mess.jpg', '529', '700')"><img src="nsr_images/_articles/onyx/cable-mess_sm.jpg" border="0"></a></p>
+<p class="body">
+Before we move onto graphics, I'll show you an optional board installed. This is the controller for the upper two RJ45 ethernet jacks we saw on the front. This option cost around $1000 when it came out and was supposed to dramatically increase network performance, but in reality the performance increase was trivial and definately not worth the price. Too bad.</p>
+<p class="body">Alright, onto graphics. Let's take a look at what everything looks like when installed:<br>
+<a href="javascript:nothing()" onclick="window_load('nsr_images/_articles/onyx/populated.jpg', '700', '528')"><img src="nsr_images/_articles/onyx/populated_sm.jpg" border="0"></a></p>
+<p class="body">
+Almost populated (you can see the drives are pulled). The graphics are the four boards on the right. Your basic InfiniteReality graphics set is three boards: Geometry Engine, Display Generator, and the Raster Manager. A previousl owner decided they were already spending a million on the machine, why not God-knows-how-much for an extra Raster Manager? Anyway, each one has 64 Megs of texture memory. Note that I didn't say graphics memory like you have on PC graphics cards. I'm talking about 64 megs just for texture memory. So that's a total of 128 megs of textures (not sure how much the set has total). Now let's look at the components up and close.</p>
+<p class="body" align="center"><a href="javascript:nothing()" onclick="window_load('nsr_images/_articles/onyx/geometryengine.jpg', '700', '604')"><img src="nsr_images/_articles/onyx/geometryengine_sm.jpg" border="0"></a></p>
+<p class="body">
+This is SGI's money maker of ages past. The Geometry Engine. Suprisingly, nVidia's Geforce architecture is derived mostly from this hunk of silicon. As nVidia's engineers mostly consist of layed-off SGI engineers.</p>
+<p class="body" align="center"><a href="javascript:nothing()" onclick="window_load('nsr_images/_articles/onyx/displaygenerator.jpg', '700', '606')"><img src="nsr_images/_articles/onyx/displaygenerator_sm.jpg" border="0"></a></p>
+<p class="body">
+Here is the all-so-important Display Generator. This is another splurge from whoever bought the graphics as this is what makes eight displays possible. Unfortunately playing with this is a dream that will never reach fruition, as this board is fried and only produces scrambled images. Yes, very sad. This is why the article won't go into the details of the software that drives this behometh.</p>
+
+<p class="body" align="center"><a href="javascript:nothing()" onclick="window_load('nsr_images/_articles/onyx/rastermanager.jpg', '599', '700')"><img src="nsr_images/_articles/onyx/rastermanager_sm.jpg" border="0"></a></p>
+<p class="body">
+Now we have the magic Raster Manager that makes textured graphics possible. There is space for up to four of these in both the backplane (the silicon that connects all the boards) and the bridge (that thingy you see in the group pic that connects the two RMs to the DG, but I'm not sure if there's a software limit.</p>
+<p class="body">Now for the bridge itself. First I'll show you it ready to be plugged on, and then what the connectors look like.<br>
+<a href="javascript:nothing()" onclick="window_load('nsr_images/_articles/onyx/bridge-handle.jpg', '700', '551')"><img src="nsr_images/_articles/onyx/bridge-handle_sm.jpg" border="0"></a><a href="javascript:nothing()" onclick="window_load('nsr_images/_articles/onyx/bridge-connections.jpg', '507', '580')"><img src="nsr_images/_articles/onyx/bridge-connections_sm.jpg" border="0"></a><br>Yeah, sorry about the blur. But you get the point.</p>
+<p class="body">Now I'll quickly breeze over one interesting thing about this machine, and it's the cooling. The average PC you can operate without the side panel on. In fact, sometimes it's a better idea if keeping it cool is important to you. The Onyx can not stay up long with the iinterface panel down. The parts will simply overheat. So the Onyx has a complex series of ducts that breathe air in the bottom and out the top (hot air rises, don't want to take in what it just put out). The power supply has one 70mm fan, and the chassis how two 90mm fans (yes, that is huge), and one turbine. Yes, a turbine. This pic really doesn't do the weather machine justice.</p>
+<p class="body" align="center"><a href="javascript:nothing()" onclick="window_load('nsr_images/_articles/onyx/turbine.jpg', '700', '646')"><img src="nsr_images/_articles/onyx/turbine_sm.jpg" border="0"></a></p>
+<p class="body">
+Well, that about covers the basics of hardware for the Onyx. I'm sorry to tell you you'll probably never get to put this knowledge to any good use as my mainstream components desktop has about 10x the power of this box and sucks down less than a third of the wattage (and isn't the size of a mini-fridge). The only way you'll play with these is if you're insane like me. But it's good to have taken a look at. Most people are only aware of one way a computer goes together. When it comes to supercomputers, hopefully now you can understand how those monsters tic. Anyway, one last image for perspective. It doubles as a second physical desktop, and often holds my laptop or dinner.</p>
+<p class="body" align="center"><a href="javascript:nothing()" onclick="window_load('nsr_images/_articles/onyx/onyx-scale.jpg', '539', '700')"><img src="nsr_images/_articles/onyx/onyx-scale_sm.jpg" border="0"></a></p>
+<p class="citetext">
+<b>Resources:</b><br>SGI POWER Onyx and Onyx Deskside Owner's Guide: <a href="http://techpubs.sgi.com/library/tpl/cgi-bin/getdoc.cgi?coll=hdwr&db=bks&srch=&fname=/SGI_Admin/POnyx_Desk_OG/sgi_html/ch01.html" target="_blank">http://techpubs.sgi.com/library/tpl/cgi-bin/getdoc.cgi?coll=hdwr&db=bks&srch=&fname=/SGI_Admin/POnyx_Desk_OG/sgi_html/ch01.html</a><br>Obsolete: <a href="http://hardware.majix.org/computers/sgi.onyx/" target="_blank">http://hardware.majix.org/computers/sgi.onyx/</a><br>Ian Mapleson's SGI site: <a href="http://www.futuretech.blinkenlights.nl/sgi.html" target="_blank">http://www.futuretech.blinkenlights.nl/sgi.html</a><br><b>Additional Reading:</b><br>Single-ended vs. differential: <a href="http://www.faqs.org/faqs/arch-storage/part2/section-125.html" target="_blank">http://www.faqs.org/faqs/arch-storage/part2/section-125.html</a><br>How shutter glasses work: <a href="http://en.wikipedia.org/wiki/Shutter_glasses" target="_blank">http://en.wikipedia.org/wiki/Shutter_glasses</a><br>Genlock: <a href="http://en.wikipedia.org/wiki/Genlock" target="_blank">http://en.wikipedia.org/wiki/Genlock</a>
+</p></body>

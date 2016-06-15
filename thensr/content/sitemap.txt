@@ -1,0 +1,10 @@
+<div class="mainheader">sitemap</div>
+		<div class="boxitem">
+		<p class="body"><b>Main Topic Areas</b><br>
+&nbsp;&nbsp;<a href="/main.php?page=pc">PC</a> | <a href="/main.php?page=linux">Linux Distros</a> | <a href="/main.php?page=gamer">Gamer Central</a> | <a href="/main.php?page=tech">Technology</a></p>
+<p class="body"><b>Other Information</b><br>
+&nbsp;&nbsp;<a href="/about.php?page=help" class="norm">Help / Guide</a> | <a href="/about.php?page=disclaimer" class="norm">A Friendly Disclaimer</a></p>
+<p class="body"><b>About Us</b><br>
+&nbsp;&nbsp;<a href="/about.php?page=team&area=team">The Team</a> | <a href="/about.php?page=news" class="norm">Latest Happenings</a> | <a href="/main.php?page=activities">Team Activities</a></p><br>
+			</div>
+<br><br>

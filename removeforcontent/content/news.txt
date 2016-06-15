@@ -1,0 +1,6 @@
+<div class="mainheader">news</div>
+<div class="boxitem">
+<p class="body">02/08/2011 :: Working on Remove for Content; based on the Network Stability Resource</p>
+<br>
+</div>
+<br><br>

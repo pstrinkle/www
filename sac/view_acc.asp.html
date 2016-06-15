@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>SAC Personal Account Information</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="content-style-type" contect="text/css">
+<link rel="stylesheet" href="main.css" charset="iso-8859-1" type="text/css">
+<!-- #include file="var.inc" -->
+
+</head>
+<%
+select1 = Request.QueryString("num")
+If select1 = "" Then
+Response.Redirect "index.asp"
+End If
+%>
+<% 
+set con = Server.CreateObject("ADODB.Connection")
+con.Open "DBQ="& DbFile2 &";Driver={Microsoft Access Driver (*.mdb)};DriverId=25;FIL=MS Access;"
+sql="SELECT * FROM tblPWord WHERE (num) LIKE '" & select1 & "' ;"
+
+Set rs = Server.CreateObject("ADODB.Recordset")
+	rs.Open sql, con, 3, 3
+
+If rs.EOF Then
+Response.Redirect "index.asp"
+End If
+%>
+<body bgcolor="#000000">
+<img src="_images/_mainmenu/logo_sac.gif" border="0" alt="Welcome">
+<table border="0" cellpadding="0" cellspacing="0"  width="700" bgcolor="#000000" height="25">
+<tr>
+<td width="75" height="25"><img src="_images/sac_menu.gif"></td>
+<td align="left" valign="top"><p class="menuon">
+<a href="view_sac.asp?num=<%=rs.Fields("num").Value %>" class="menu" onMouseOver="window.status='SAC - Main'; return true" onMouseOut="window.status='';return true">_sac</a>
+| <a href="view_mb.asp?num=<%=rs.Fields("num").Value %>" class="menu" onMouseOver="window.status='The Messageboard'; return true" onMouseOut="window.status='';return true">_messageboard</a>
+| <a href="view_events.asp?num=<%=rs.Fields("num").Value %>" class="menu" onMouseOver="window.status='The Events'; return true" onMouseOut="window.status='';return true">_events</a>
+|<img src="_images/leftarrow.gif" align="absmiddle"><b>Account</b><img src="_images/rightarrow.gif" align="absmiddle">
+| <a href="view_chapter.asp?num=<%=rs.Fields("num").Value %>" class="menu" onMouseOver="window.status='The Chapters - Main'; return true" onMouseOut="window.status='';return true">_chapters</a>
+| <a href="view_roster.asp?num=<%=rs.Fields("num").Value %>" class="menu" onMouseOver="window.status='The Roster'; return true" onMouseOut="window.status='';return true">_roster</a>
+| <a href="view_blueteam.asp?num=<%=rs.Fields("num").Value %>" class="menu" onMouseOver="window.status='Blue Team!'; return true" onMouseOut="window.status='';return true">_blue team</a>
+| <a href="view_policy.asp?num=<%=rs.Fields("num").Value %>" class="menu" onMouseOver="window.status='Policy'; return true" onMouseOut="window.status='';return true">_policy</a>
+</p></td>
+</tr>
+</table><table background="_banners/binary_back.gif" width="800" border="2" cellpadding="0" cellspacing="0">
+<tr><td bgcolor="#335A99" bordercolor="#C0C0C0"><h3 class="bodygrey">Hello, <%=rs.Fields("FName").Value %></h3>
+<p class="bodygrey" align="center"><a href="view_accedit.asp?num=<%=rs.Fields("num").Value %>" class="org" onMouseOver="window.status='Edit Your Account Information'; return true" onMouseOut="window.status='';return true">_edit</a></p>
+<table align="center" cellspacing="0" cellpadding="0" border="2" bordercolor="#000000" bgcolor="#000000" width="450">
+<tr><td align="center" colspan="2" valign="top"><img src="_images/sac_you.gif"></td></tr>
+<tr><td>
+<table border="1" bordercolor="#000000" bgcolor="#FFFFFF" cellpadding="3" cellspacing="3" width="250">
+<tr bordercolor="#000000" bgcolor="#CCCCCC">
+<td><p class="bodytext">Last Name:</p></td>
+<td><p class="bodytext"><%=rs.Fields("LName").Value %></p></td></tr>
+<tr bordercolor="#000000" bgcolor="#CCCCCC">
+<td><p class="bodytext">First Name:</p></td>
+<td><p class="bodytext"><%=rs.Fields("FName").Value %></p></td></tr>
+<tr bordercolor="#000000" bgcolor="#CCCCCC">
+<td><p class="bodytext">Home:</p></td>
+<td><p class="bodytext"><%=rs.Fields("Phone").Value %></p></td></tr>
+<tr bordercolor="#000000" bgcolor="#CCCCCC">
+<td><p class="bodytext">Cell:</p></td>
+<td><p class="bodytext"><%=rs.Fields("Cell").Value %></p></td></tr>
+<tr bordercolor="#000000" bgcolor="#CCCCCC">
+<td><p class="bodytext">Position/Title:</p></td>
+<td><p class="bodytext"><%=rs.Fields("Rank").Value %></p></td></tr>
+<tr bordercolor="#000000" bgcolor="#CCCCCC">
+<td><p class="bodytext">AIM SN:</p></td>
+<td><p class="bodytext"><%=rs.Fields("AIM_SN").Value %></p></td></tr>
+<tr bordercolor="#000000" bgcolor="#CCCCCC">
+<td><p class="bodytext">Email:</p></td>
+<td><p class="bodytext"><a href="mailto:<%=rs.Fields("Email").Value %>" class="org"><%=rs.Fields("Email").Value %></a></p></td></tr>
+<tr bordercolor="#000000" bgcolor="#CCCCCC">
+<td><p class="bodytext">Team:</p></td>
+<td><p class="bodytext"><%=rs.Fields("Team").Value %></a></p></td></tr></table>
+
+</td><td valign="top">
+
+<table border="1" bordercolor="#000000" bgcolor="#FFFFFF" cellpadding="3" cellspacing="3" valign="top">
+<tr bordercolor="#000000" bgcolor="#CCCCCC" valign="top">
+<td valign="top"><% If rs.Fields("MugShot").Value <> "" Then %><img src="_images/_sac/<%=rs.Fields("MugShot").Value %>"><% Else %><img src="_images/_sac/nophoto.jpg" alt="Without Photo"><% End If %></td>
+</tr></table>
+
+</td></tr><tr><td colspan="2">
+
+<table border="1" align="center" bordercolor="#000000" bgcolor="#FFFFFF" cellpadding="3" cellspacing="3" width="450">
+<tr bordercolor="#000000" bgcolor="#CCCCCC">
+<td><p class="bodytext">Quote:</p></td>
+<td><p class="bodytext"><%=rs.Fields("Quote").Value %></a></p></td></tr>
+<tr bordercolor="#000000" bgcolor="#CCCCCC">
+<td><p class="bodytext">Bio:</p></td>
+<td><p class="bodytext"><%=rs.Fields("Bio").Value %></a></p></td></tr>
+
+<tr bordercolor="#000000" bgcolor="#CCCCCC">
+<td colspan="2"><p class="bodytext" align="center">You can edit this information on your own.</p></td></tr>
+</table>
+
+</td></tr></table>
+
+<p>&nbsp;</p>
+</td></tr>
+<tr>
+<td bordercolor="#000000">
+<img src="_banners/oneshoe_lownews.gif" border="0" alt="OneShoeProgramming tampered with this Database">
+</td>
+</tr>
+</table>
+<!-- #include file="footer.inc" -->
+
+
+
+</body>
+</html>

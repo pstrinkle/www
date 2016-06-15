@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>SAC Policy</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="content-style-type" contect="text/css">
+<link rel="stylesheet" href="main.css" charset="iso-8859-1" type="text/css">
+<!-- #include file="var.inc" -->
+
+</head>
+<%
+select1 = Request.QueryString("num")
+If select1 ="" Then
+Response.Redirect "index.asp"
+End If
+%>
+<% 
+set con = Server.CreateObject("ADODB.Connection")
+con.Open "DBQ="& DbFile2 &";Driver={Microsoft Access Driver (*.mdb)};DriverId=25;FIL=MS Access;"
+sql="SELECT * FROM tblPWord WHERE (num) LIKE '" & select1 & "' ;"
+
+Set rs = Server.CreateObject("ADODB.Recordset")
+	rs.Open sql, con, 3, 3
+
+If rs.EOF Then
+Response.Redirect "index.asp"
+End If
+%>
+<body bgcolor="#000000">
+<img src="_images/_mainmenu/logo_sac.gif" border="0" alt="Welcome">
+<table border="0" cellpadding="0" cellspacing="0"  width="700" bgcolor="#000000" height="25">
+<tr>
+<td width="75" height="25"><img src="_images/sac_menu.gif"></td>
+<td align="left" valign="top"><p class="menuon">
+<a href="view_sac.asp?num=<%=rs.Fields("num").Value %>" class="menu" onMouseOver="window.status='SAC - Main'; return true" onMouseOut="window.status='';return true">_sac</a>
+| <a href="view_mb.asp?num=<%=rs.Fields("num").Value %>" class="menu" onMouseOver="window.status='The Messageboard'; return true" onMouseOut="window.status='';return true">_messageboard</a>
+| <a href="view_events.asp?num=<%=rs.Fields("num").Value %>" class="menu" onMouseOver="window.status='The Events'; return true" onMouseOut="window.status='';return true">_events</a>
+| <a href="view_acc.asp?num=<%=rs.Fields("num").Value %>" class="menu" onMouseOver="window.status='Your Account'; return true" onMouseOut="window.status='';return true">_account</a>
+| <a href="view_chapter.asp?num=<%=rs.Fields("num").Value %>" class="menu" onMouseOver="window.status='The Chapters - Main'; return true" onMouseOut="window.status='';return true">_chapters</a>
+| <a href="view_roster.asp?num=<%=rs.Fields("num").Value %>" class="menu" onMouseOver="window.status='The Roster'; return true" onMouseOut="window.status='';return true">_roster</a>
+| <a href="view_blueteam.asp?num=<%=rs.Fields("num").Value %>" class="menu" onMouseOver="window.status='Blue Team!'; return true" onMouseOut="window.status='';return true">_blue team</a>
+|<img src="_images/leftarrow.gif" align="absmiddle"><b>Policy</b><img src="_images/rightarrow.gif" align="absmiddle"></td>
+</tr>
+</table>
+<table background="_banners/binary_back.gif" width="800" border="2" cellpadding="0" cellspacing="0">
+<tr><td bgcolor="#335A99" valign="top" bordercolor="#C0C0C0">
+<h3 class="bodygrey">Hello, <%=rs.Fields("FName").Value %> and Welcome to Policy.</h3>
+
+<table align="center">
+<tr>
+<td width="200" valign="top">
+<table align="center" border="2" bordercolor="#000000" bgcolor="#000000">
+<tr>
+<td valign="top" align="center" width="200"><img src="_images/sac_new.gif"></td>
+</tr><tr>
+<td bgcolor="#A67C52">
+<p class="bodytext">
+-The Mission Statement
+</p></td>
+</tr>
+</table>
+<br>
+<table align="center" border="2" bordercolor="#000000" bgcolor="#000000">
+<tr>
+<td valign="top" align="center" width="200"><img src="_images/sac_links.gif"></td>
+</tr><tr>
+<td bgcolor="#1E1E56">
+<p class="bodygrey">
+<a href="#mission" class="org">View the Mission Statement (Draft)</a>
+</p>
+</td>
+</tr>
+</table>
+
+
+
+</td>
+<td align="center" valign="top">
+<table border="2" bordercolor="#000000" align="center" bgcolor="#000000">
+<tr>
+<td align="center" valign="top"><img src="_images/sac_documents.gif" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#335A99" align="center" valign="top">
+<h2 class="bodywhite" align="center"><a name="mission"></a>-Mission Statement -- Support the SAC!-</h2>
+<p class="bodygrey">Support the Sac with both hands, because it needs your help.  SAC is Secretly Against Cuba, or a few other things, and its purpose is to take over Cuba in a set amount of time.</p>
+<p class="bodygrey">SAC's real mission is to spread across the globe as an organization of friends joined by word of mouth, who hang out and do cool things and with the idea that we're an organization that is built to watch out for its own.</p>
+<p class="bodygrey">Join your local SAC, because all together, we can make a difference in the SAC</p>
+<h3 class="bodygrey" align="center">There are currently no documents posted on Policy, but you can expect them over the next few days.</h3>
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+
+</td></tr>
+<tr>
+<td bordercolor="#000000">
+<img src="_banners/oneshoe_lownews.gif" border="0" alt="OneShoeProgramming tampered with this Database">
+</td>
+</tr>
+</table>
+<!-- #include file="footer.inc" -->
+
+
+
+</body>
+</html>

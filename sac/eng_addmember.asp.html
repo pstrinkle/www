@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="content-style-type" contect="text/css">
+<link rel="stylesheet" href="main.css" charset="iso-8859-1" type="text/css">
+
+</head>
+<%
+DbFile4 = "d:\www.1shoe.net\data\test\dbsac.mdb"
+%>
+<%
+dim select1
+dim select2
+dim select3
+dim select4
+dim select5
+dim select6
+dim select7
+dim select8
+dim select9
+dim select10
+dim select11
+dim select12
+dim select13
+dim select14
+dim select15
+
+select1 = Trim(request.form("strPWord"))
+select2 = Trim(request.form("strLName"))
+select3 = Trim(request.form("strFName"))
+select4 = Trim(request.form("strPhone"))
+select5 = Trim(request.form("strCell"))
+select6 = Trim(request.form("strAIM_SN"))
+select7 = Trim(request.form("strEmail"))
+select8 = Trim(request.form("strLogin"))
+select9 = Trim(request.form("strNum"))
+select10 = Trim(request.form("strPos"))
+select11 = Trim(request.form("strQuote"))
+select12 = Trim(request.form("strBio"))
+select13 = Trim(request.form("strTeam"))
+select14 = Trim(request.form("strRes"))
+select15 = Trim(request.form("strMyNum"))
+
+select2 = Replace(select2, "''", " ")
+select2 = Replace(select2, "%", " ")
+select3 = Replace(select3, "''", " ")
+select3 = Replace(select3, "%", " ")
+select4 = Replace(select4, "-", ".")
+select5 = Replace(select5, "-", ".")
+select8 = Replace(select8, "''", " ")
+select8 = Replace(select8, "%", "-")
+
+
+
+dim rsAddNewComments1
+dim con3
+dim strSql3
+Response.Buffer = True
+%>
+
+
+<body bgcolor="#FFFFFF">
+<%
+Set con3 = Server.CreateObject("ADODB.Connection")
+con3.Open "DBQ="& DbFile4 &";Driver={Microsoft Access Driver (*.mdb)};DriverId=25;FIL=MS Access;"
+strSql3 = "SELECT * FROM tblPWord ORDER BY ID DESC;"
+Set rsAddNewComments1 = Server.CreateObject("ADODB.Recordset")
+rsAddNewComments1.CursorType = 2
+rsAddNewComments1.LockType = 3
+rsAddNewComments1.Open strSql3, con3
+rsAddNewComments1.AddNew
+rsAddNewComments1.Fields("num") = select9
+rsAddNewComments1.Fields("LName") = select2
+rsAddNewComments1.Fields("FName") = select3
+rsAddNewComments1.Fields("Phone") = select4
+rsAddNewComments1.Fields("Cell") = select5
+rsAddNewComments1.Fields("AIM_SN") = select6
+rsAddNewComments1.Fields("Email") = select7
+rsAddNewComments1.Fields("Login") = select8
+rsAddNewComments1.Fields("PWord") = select1
+rsAddNewComments1.Fields("Rank") = select10
+rsAddNewComments1.Fields("Quote") = select11
+rsAddNewComments1.Fields("Bio") = select12
+rsAddNewComments1.Fields("Team") = select13
+rsAddNewComments1.Fields("Restrict") = select14
+rsAddNewComments1.Update
+rsAddNewComments1.Close
+con3.Close
+Set rsAddNewComments1 = Nothing
+Set con3 = Nothing
+
+Response.Redirect "view_admin_member.asp?num=" & select15 & ""
+%>
+
+
+</body>
+</html>

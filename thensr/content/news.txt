@@ -1,0 +1,31 @@
+<div class="mainheader">news</div>
+		<div class="boxitem">
+<p class="body">02/08/2011 :: Brought the site back up; still haven't grabbed the images or anything.  Most of the stories are up.  I have no staff and I still need to update all the content.</p>
+<p class="body">02/25/2007 :: Refactored many parts of the site.  Rebuilt RSS Feed.</p>
+<p class="body">01/06/2007 :: Brought up the main page in the new format and changed a lot of remaining pages.  Still have lots of work to do behind the scenes, so you can add comments, etc.  Like how I will get the database driven rss feed to be either no longer database driven, or somehow integrating everything in some cohesive mess.</p>
+<p class="body">12/30/2006 :: Converted most of the main areas from database calls to xml file reads.  Still lots of work to be done on layout.</p>
+<p class="body">12/25/2006 :: Changed more of the site to the new layout, to include using xml files over database entries.</p>
+<p class="body">12/23/2006 :: Changed one of the sites to a potential new layout.</p>
+<p class="body">3/29/2006 :: Disabled the forum from a lack of use.  Articles continue to be published on an almost regular basis.</p>
+<p class="body">12/14/2005 :: Added our first RSS Feed, also many many changes on site to include an entirely new content layout.</p>
+<p class="body">11/29/2005 :: First two items up on Cafepress Store.</p>
+<p class="body">11/10/2005 :: I've changed a lot around and will slowly be improving the main page.  Also now that we're public flyers are going up around campus, and articles are getting pushed out on a more regular basis.</p>
+<p class="body">10/04/2005 :: Reformated team page and added a team blog where we can pent out whatever we want.</p>
+<p class="body">09/30/2005 :: Forums repaired and working properly, will be making them cooler.</p>
+<p class="body">09/29/2005 :: Brad had a good idea.</p>
+<p class="body">09/26/2005 :: New writer found for the Gamer side.</p>
+<p class="body">09/22/2005 :: Today I hooked us up with Google AdSense so that we could possible make money so as to pay for the webspace which I have been forking over personally for a while.</p>
+<p class="body">09/11/2005 :: Ilavazhagan Ilagnayeru joins NSR as a writer who will focus on the Macintosh arena.</p>
+<p class="body">09/10/2005 :: I uploaded things the team has photographed and filmed and made an area for it.  The site is making considerable progress with the opening of the Fall 2005 Semester.</p>
+<p class="body">03/24/2005 :: Added personnel database and maintenance pages for such. Also added rating system for the articles. Don't worry, it's funny math. There's also a special access page for the writers now to view future topics, etc. I also converted the entire site from using ip tracking, to now using cookies. I also built the sitemap.</p>
+<p class="body">12/09/2004 :: Added two new formatting options as well as a third which controls the color of the topic post. I also added some stuff behind the scenes and I am working on some new features.</p>
+<p class="body">12/07/2004 :: Site is up with full database capability. We will be implementing the changes we meant to make before we lost everything, to include message formatting and other such nonsense.</p>
+<p class="body">12/06/2004 :: Site is back up after one year of being dead and underground. Trial period for the site will begin once I've tested and fixed all the glorious code.</p>
+<p class="body">1/22/2004 :: This site is getting upgraded behind the scenes and the advertising and such will be going up next week when the semester springs into action.</p>
+<p class="body">11/14/2003 :: This site may be contracting a disease. Also business cards should be arriving soon, and flyers and advertising and so on. This should lead to growth!</p>
+<p class="body">11/11/2003 :: We apologize for the long time without anything posted. The server was abducted by aliens.</p>
+<p class="body">10/30/2003 :: Articles are starting to be posted. Business cards and t-shirts on their way! Go us!</p>
+<p class="body">10/13/2003 :: Login incorporated and possible duplicity registering has been resolved.</p>
+<p class="body">10/12/2003 :: This site was brought up. No articles posted yet, and the login has been designed, but not incorporated. Should be incorporated tonight, along with a better system for uploading things.</p><br>
+			</div>
+<br><br>

@@ -1,0 +1,8 @@
+<div class="mainheader">team</div>		
+		<div class="boxitem">
+			<p class="body"><img src="nsr_images/_odd/patrick6_sm.jpg" border="0" alt="Patrick"><br><a href="/team.php?page=patrick&area=team">Patrick the Administrator</a></p>
+			<p class="body"><img src="nsr_images/_odd/jon_sm.jpg" border="0" alt="Jon"><br><a href="/team.php?page=jon&area=team">Jon the Writer</a></p>
+			<p class="body"><img src="nsr_images/_odd/jim_sm.jpg" border="0" alt="Jim"><br><a href="/team.php?page=jim&area=team">Jim the Writer</a></p>
+			<p class="body"><img src="nsr_images/_odd/george_sm.jpg" border="0" alt="George"><br><a href="/team.php?page=george&area=team">George the Writer</a></p><br>
+			</div>
+<br><br>

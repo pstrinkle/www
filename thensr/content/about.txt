@@ -1,0 +1,13 @@
+<div class="mainheader">about</div>
+	<div class="boxitem">
+		<p class="body">- <a href="/about.php?page=team&area=team" class="norm">team</a><br>
+				   - <a href="/about.php?page=contribute" class="norm">contribute</a><br>
+				   - <a href="/about.php?page=rss" class="norm">rss</a><br>
+				   - <a href="/about.php?page=disclaimer" class="norm">disclaimer</a><br>
+				   - <a href="/about.php?page=help" class="norm">help</a><br>
+				   - <a href="/about.php?page=news" class="norm">news</a><br>
+				   - <a href="/about.php?page=sitemap" class="norm">sitemap</a></p><br>
+</div>
+<br><br>
+
+

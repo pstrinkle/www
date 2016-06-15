@@ -1,0 +1,58 @@
+<title>The UMPC</title>
+<author>George Liu</author>
+<img>nsr_images/_articles/_smalls/umpc.jpg</img>
+<date>3/22/2006</date>
+<area>tech</area>
+<body>
+<p class="body">In this world, there are people that try to cram a PC into small places. Some of these people are modders, and they have put computers in toasters, milk cans, and even old NES systems. Sometimes, it's a company that does this, creating Small Form Factor PC's, Blade servers, and Home Theater PC's. This year, Microsoft and Intel unveiled a new concept, the Ultra Mobile PC, or UMPC concept. Essentially, it's a scaled down tablet, or a blackberry on steroids. These UMPC's are quite interesting designs, with specifications that put some older PC's to shame. The first unveiling of the UMPC came about as "Project Origami", a marketing website from Microsoft. Intel later unveiled the UMPC, albeit less enthusiastically.</p>
+<p class="body">Intel, and other UMPC creators, claim the UMPC will let users: </p>
+<ul class="body">
+  <li> ACCESS content and information virtually anytime, anywhere </li>
+  <li> COMMUNICATE via email, IM, chat, or blogging </li>
+  <li> ENTERTAIN themselves with videos, games, music, pictures or TV on the go </li>
+  <li> BE PRODUCTIVE by monitoring office apps and tools </li>
+</ul>
+<p class="body">List from <a href="http://www.intel.com" target="out">Intel</a></p>
+<p class="body">We already have products that can do some of these things (portable DVD players, cell phones, PSP, DS, laptops) but either they are too specialized (games and internet for PSP), too small (Office on a cell phone won't work), or too large (laptops can be heavy!). So it is very interesting to see a Jack-of-all-trades type of device. Before we take a look at marketability, let's look at what's already here. Prototypes from Asus, Samsung, and a Chinese firm called Founder are being shown off at the latest CeBIT, with almost full specifications. The Founder MiniNote is listed below. </p>
+<p align="center" class="body"><img src="nsr_images/_articles/umpc/Mininote.jpg"><br><b>The Founder MiniNote</b></p>
+<ul class="body">
+  <li>Processor </li>
+  <ul class="body">
+    <li> Intel® ULV Celeron M 900MHz or Pentium M 1GHz (Dothan) </li>
+  </ul>
+  <li>Operating system </li>
+  <ul class="body">
+    <li>Microsoft® Windows® XP family version (Most likely based off of Tablet PC edition) </li>
+  </ul>
+  <li>Chip group Intel® 915 GMS chip group </li>
+  <li>Memory 256MB/512MB DDRII memory </li>
+  <li>Display monitor 7-inch Wide screen </li>
+  <li>Hard disk 30G (Probably a 1.8" version) </li>
+  <li>I/O port 1 power source connection </li>
+  <li>1 microphone jack </li>
+  <li>1 telephone jack </li>
+  <li>2 USB 2.0 connections </li>
+  <li>Port duplication connection (probably a dock) </li>
+  <li>802.11b/g wifi, maybe with GPRS and bluetooth</li>
+  <li>Folding keyboard </li>
+  <li>1.3 million picture elements </li>
+  <li> 3 core  lithium ion battery </li>
+  <li> Joylink software (For connectivity?)</li>
+  <li>Size 225.5mm x 144mm x 23/25mm (8.85" x 5.66" x 0.9") </li>
+  <li>Weight Approximately 830g (actual weight can vary) </li>
+</ul>
+<p class="body">Specifications courtesy of <a href="http://www.umpcbuzz.com/blogs/umpc_buzz/archive/2006/03/11/7225.aspx" target="_blank">UMPCBuzz.com</a></p>
+<p class="body">The UMPC won't be fast, and it won't be large. In fact, set up as is in the picture, it's a very odd looking mini PC. I'm curious about the telephone jack. There's no ethernet jack, but they put a telephone connection in here? It doesn't make a lot of sense to me, but overall, it looks good. The specs look very good, in fact. There's a lot of computer in a package that's less than an inch thick. That is impressive! It's very small, being barely larger than most portable video players, but it has a much better resolution than they do. It also has a hard drive, something the PSP lacks. This means you could put your music and video collections on it and take it with you anywhere. You get a better screen and graphics than the PSP or the blackberry, meaning you can do a lot more video watching. Plus, since it has built in wireless connectivity, you can link up and do whatever you would normally do with a computer. It's much more functional than any one device. </p>
+<p class="body">So far, here's what I think is bad about the UMPC. </p>
+<ul class="body">
+  <li>It will be expensive. Microsoft is suggesting $599-$999, the price of many more functional, and more enjoyable notebooks. A 12" notebook is twice as large, granted, but it is easier to view, mouse, and type on. Since people probably will be sitting when using the UMPC (walking around on the street while playing a game is suicide), an ultra-portable laptop is a much better value. Bear in mind, this UMPC still requires a keyboard, whether a mini blackberry style keyboard, or a full size folding keyboard, making typing slightly more difficult than usual. And  who would buy it, when a laptop is much more useful, at lower cost? </li>
+  <li>It will be slow. It's running an ULV Dothan based processor, something that's not very powerful. I'd equate the higher end chip to a 1.8 GHz Pentium 4, and that's not terrible. The 2.5" (or smaller) disk drive will be slow as well, since higher rotational speeds would increase heat and noise. And lastly, to fit into the price range, I doubt any of these PC's will have much more than 512MB of RAM, which is the highest option on the MiniNote. That makes the system even slower, since Windows is notorious for RAM usage.</li>
+  <li>It's not as small as you think. Measure out the dimensions for yourself. It's a little less than the size of half a sheet of paper, even if it is less than an inch thick. That makes it too big for pockets, and too big for some purses, but small enough to get easily lost, dropped, or stolen.</li>
+  <li>The UMPC will also not have any new functionality. People that like to play games will probably stick with their DS or PSP, and the PSP also plays movies. In fact, the PSP is coming out with new upgrades for webcam and GPS functionality. People that need mobile email already have cell phones and blackberries. And laptops, and tablets. And what about battery life? With components forming a large chunk of the PC, it's questionable how large a battery can fit in there. Intel claims a "long battery life". I'm guessing four or five hours of life is about right, and that's just not good enough. This kind of portable device shouldn't have to be charged twice a day, but it will need to be. </li>
+</ul>
+<p class="body">My ultimate view on this thing is that it's a toy. Serious companies won't go for it, since it's not functional enough. Utility minded consumers won't buy it since it's too expensive. It's a toy, through and through. Granted, it's a toy for adults, whereas the PSP is for a younger crowd, but like any toy, it gets old really fast. We'll see how it does in the market, because I do think it's interesting, but not interesting enough. </p>
+<br>
+<p class="citetext">Image from:<br>
+<a href="http://www.umpcbuzz.com/blogs/umpc_buzz/archive/2006/03/11/7225.aspx" target="_blank">UMPCBuzz.com</a><br>
+<a href="http://www.umcp.com" target="_blank">UMCP.com</a></p>
+</body>

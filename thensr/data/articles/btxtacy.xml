@@ -1,0 +1,14 @@
+<title>BTXtacy</title>
+<author>Brad Glinka</author>
+<img>nsr_images/_articles/_smalls/noimageavail.jpg</img>
+<date>10/30/2005</date>
+<area>tech</area>
+<body>
+<p class="body">Upon the recent delivery and inspection of my new BTX form factor case and mother board, I was inspired with an interest in the benefits of this new standard.  The special arrangement of the components on the motherboard offers key advantages.  Firstly, the processor and north bridge chip are physically closer together which allows for faster transmissions of data along this pipe.  The developers of the form factor designed the motherboard with the latest technologies in mind.  Serial ATA, PCI Express and USB 2.0 are all standards on BTX motherboards.  The layout of the components also provides for in-line airflow.  This meaning that with all the hot components in line with each other it makes it possible to use smaller cheaper heat sinks more effectively.  Since the cases use smaller fans and dont require as much cooling as an ATX case the noise is severely less by compairison.  The cases I have experience with have a large opening in the front with a fan to blow air right across the hottest parts to include: the CPU, north bridge, and video card.  These advantages  allow for new technologies and a better cooling system--rivaling water cooled systems. In conclusion this new form factor makes way for faster more advanced components and is ready for the newest technologies.</p>
+<p class="body" align="center"><img src="nsr_images/_articles/01BTX.gif" border="0"></p>
+<p class="citetext">Information taken from:<br>
+MaxPC Magazine<br>
+Form Factors.org: http://www.formfactors.org/FFDetail.asp?FFID=12&CatID=1<br>
+Image from:<br>
+www.pctechguide.com/01mboards_BTX.htm</p>
+</body>

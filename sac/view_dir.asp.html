@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Directory Search</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="content-style-type" contect="text/css">
+<link rel="stylesheet" href="main.css" charset="iso-8859-1" type="text/css">
+<!-- #include file="var.inc" -->
+<%
+select1 = Request.QueryString("num")
+If select1 = "" Then
+Response.Redirect "index.asp"
+End If
+%>
+<%
+
+dim select3
+dim select4
+
+select3 = Trim(request.form("strType"))
+select4 = Trim(request.form("strSearch"))
+%>
+</head>
+<%
+If select4 = "%" Then
+select4 = ""
+End If
+
+%>
+<% 
+set con = Server.CreateObject("ADODB.Connection")
+con.Open "DBQ="& DbFile2 &";Driver={Microsoft Access Driver (*.mdb)};DriverId=25;FIL=MS Access;"
+If select3 = "Last Name" Then
+sql="SELECT * FROM tblPWord WHERE (LName) LIKE '" & select4 & "' ;"
+ElseIf select3 = "First Name" Then
+sql="SELECT * FROM tblPWord WHERE (FName) LIKE '" & select4 & "' ;"
+ElseIf select3 = "Login" Then
+sql="SELECT * FROM tblPWord WHERE (Login) LIKE '" & select4 & "' ;"
+End If
+sql2="SELECT * FROM tblPWord WHERE (num) LIKE '" & select1 & "' ;"
+Set rs = Server.CreateObject("ADODB.Recordset")
+	rs.Open sql, con, 3, 3
+Set rs2 = Server.CreateObject("ADODB.Recordset")
+	rs2.Open sql2, con, 3, 3
+	
+If rs2.EOF Then
+Response.Redirect "index.asp"
+End If
+
+%>
+<body bgcolor="#000000">
+<img src="_images/_mainmenu/logo_sac.gif" border="0" alt="Welcome">
+<table border="0" cellpadding="0" cellspacing="0"  width="700" bgcolor="#000000" height="25">
+<tr>
+<td width="75" height="25"><img src="_images/sac_menu.gif"></td>
+<td align="left" valign="top"><p class="menuon">
+<a href="view_sac.asp?num=<%=rs2.Fields("num").Value %>" class="menu" onMouseOver="window.status='SAC - Main'; return true" onMouseOut="window.status='';return true">_sac</a>
+| <a href="view_mb.asp?num=<%=rs2.Fields("num").Value %>" class="menu" onMouseOver="window.status='The Messageboard'; return true" onMouseOut="window.status='';return true">_messageboard</a>
+| <a href="view_events.asp?num=<%=rs2.Fields("num").Value %>" class="menu" onMouseOver="window.status='The Events'; return true" onMouseOut="window.status='';return true">_events</a>
+| <a href="view_acc.asp?num=<%=rs2.Fields("num").Value %>" class="menu" onMouseOver="window.status='Your Account'; return true" onMouseOut="window.status='';return true">_account</a>
+| <a href="view_chapter.asp?num=<%=rs2.Fields("num").Value %>" class="menu" onMouseOver="window.status='The Chapters - Main'; return true" onMouseOut="window.status='';return true">_chapters</a>
+|<img src="_images/leftarrow.gif" align="absmiddle"><b><a href="view_roster.asp?num=<%=rs2.Fields("num").Value %>" class="menu" onMouseOver="window.status='The Roster'; return true" onMouseOut="window.status='';return true">_roster</a></b><img src="_images/rightarrow.gif" align="absmiddle">
+| <a href="view_blueteam.asp?num=<%=rs2.Fields("num").Value %>" class="menu" onMouseOver="window.status='Blue Team!'; return true" onMouseOut="window.status='';return true">_blue team</a>
+| <a href="view_policy.asp?num=<%=rs2.Fields("num").Value %>" class="menu" onMouseOver="window.status='Policy'; return true" onMouseOut="window.status='';return true">_policy</a>
+</td>
+</tr>
+</table>
+<table background="_banners/binary_back.gif" width="700" border="2" cellpadding="0" cellspacing="0">
+<tr><td bgcolor="#335A99" bordercolor="#C0C0C0">
+<h3 class="bodygrey"><%=rs2.Fields("FName").Value %> Your Search Produced:</h3>
+
+
+<% 
+If select4 = "" or rs.EOF Then 
+%>
+<p class="bodygrey" align="Center"><b>Your search produced no results.</b><br>
+<a href="view_roster.asp?num=<%=rs2.Fields("num").Value %>" class="org">- Back -</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<%
+Else
+%>
+<table bgcolor="#000000" border="2" bordercolor="#000000" align="center">
+<tr><td><img src="_images/sac_results.gif"></td></tr><tr><td bgcolor="#335A99">
+<table>
+<%	
+rs.MoveFirst
+While Not rs.EOF
+%>
+<!-- #include file="search_sac.inc" -->
+<%
+	rs.MoveNext 
+Wend
+%>
+</table>
+</td></tr></table>
+<tr>
+<td><p class="bodygrey">More Information will be posted once this system is in full swing.</p></td>
+</tr>
+</table>
+<p>&nbsp;</p>
+
+</td></tr>
+<% 
+End If 
+%>
+<tr>
+<td bordercolor="#000000">
+<img src="_banners/oneshoe_lownews.gif" border="0" alt="OneShoeProgramming tampered with this Database">
+</td>
+</tr>
+</table>
+<!-- #include file="dir_footer.inc" -->
+
+
+
+</body>
+</html>

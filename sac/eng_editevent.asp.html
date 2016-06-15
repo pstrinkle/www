@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="content-style-type" contect="text/css">
+<link rel="stylesheet" href="main.css" charset="iso-8859-1" type="text/css">
+
+</head>
+<!-- #include file="var.inc" -->
+<%
+
+DbFile4="d:\www.1shoe.net\data\test\sac_events.mdb"
+
+dim select1
+dim select2
+dim select3
+dim select4
+dim select5
+
+select1 = Trim(request.form("strNum"))
+select2 = Trim(request.form("strID"))
+select3 = Trim(request.form("strTitle"))
+select4 = Trim(request.form("strDate"))
+select5 = Trim(request.form("strDetails"))
+
+select5 = Replace(select5, "-P-","<br><br>")
+
+dim rsAddNewComments1
+dim con3
+dim strSql3
+Response.Buffer = True
+%>
+
+
+<body bgcolor="#FFFFFF">
+<%
+Set con3 = Server.CreateObject("ADODB.Connection")
+con3.Open "DBQ="& DbFile4 &";Driver={Microsoft Access Driver (*.mdb)};DriverId=25;FIL=MS Access;"
+strSql3 = "SELECT * FROM tblEvents WHERE ID LIKE '" & select2 & "' ;"
+Set rsAddNewComments1 = Server.CreateObject("ADODB.Recordset")
+rsAddNewComments1.CursorType = 2
+rsAddNewComments1.LockType = 3
+rsAddNewComments1.Open strSql3, con3
+rsAddNewComments1.Fields("Title") = select3
+rsAddNewComments1.Fields("Date") = select4
+rsAddNewComments1.Fields("Details") = select5
+
+rsAddNewComments1.Update
+
+rsAddNewComments1.Close
+con3.Close
+Set rsAddNewComments1 = Nothing
+Set con3 = Nothing
+
+Response.Redirect "view_admin_event.asp?num=" & select1 & ""
+%>
+
+
+</body>
+</html>

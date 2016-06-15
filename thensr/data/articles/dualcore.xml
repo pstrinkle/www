@@ -1,0 +1,20 @@
+<title>Two Heads Better Then One?</title>
+<author>Brad Glinka</author>
+<img>nsr_images/_articles/_smalls/dualcore.jpg</img>
+<date>1/28/2006</date>
+<area>pc</area>
+<body>
+<p class="body" align="center"><img src="nsr_images/_articles/dual_core/athlonX2.jpg" border="0" alt="AMD Athlon X2 64"></p>
+<p class="body">Everyone has heard the expression “Two heads are better then one”, but are two cpu's better then one in the everyday users pc? Anyone who has some knowledge of server technology can tell you that multiple processors are definitely a good thing. A dual core processor, like its name suggests is a processor with two cpu's on the same die. The reason why manufactures are developing dual and multiple core processors is because we are quickly reaching the limitations of speed and power ratio of current processors. We all know higher clock speeds means better performance, but more speed means more power, and more heat. All these things can lead to slower performance. But a dual core chip makes the old more speed equals better performance equation more difficult. The theory is that having two chips running at 1 GHz would have the same performance as a single core 2 GHz chip. It is even a little more complicated than that. Luckily by now all major operating systems can run a dual core chip, and some productivity software, but to get the full advantage the software must be written to allow multi-threading and most user-end software doesn’t support this.</p>
+<p class="body">A good example is a typical pc game, where video is rendered as well as the other operations of the game are taking place. On a single core processor the processor needs to flip back and forth between the processes, making it slower, and if the code is not written with multi threading enabled, the same would happen on a dual core chip, leaving the second core to just sit and wait for something to do. With multi-threading enabled and a dual core processor the 2 cpus can divide the jobs between them, making it faster then the single core chip. Even though there is a performance boost, your only getting anywhere from 40- 80% increase in power. However since this is needed there is still a lot of software that doesn't support it, making the dual core useless. The best benefit of going to a dual core chip is the power consumption. dual cores typically run cooler and on less power since they run at a slower speed to perform at the same level as a single core chip, which is why the big guns in cpu manufacturing are pushing this new technology to its limits. The average user still doesn't have the need for a dual core chip, yet. The hardcore gamer, with the latest games, could see a performance boost, and might be worth the extra cash. Now if your planing on building servers, dual is still the way to go, until later this year or early next when Intel and AMD start to push out smaller cores making 2-4 core chips for desktops and 4-8 core chips for server applications, now that's a rig id like to see, an 8 core processor.</p>
+<p class="body" align="center"><img src="nsr_images/_articles/dual_core/dual.gif" border="0" alt="Chip Architecture"></p>
+<p class="body">This is the basic architecture of a dual core processor. As you can see it is two full cpus on one chip. Each having its own processor, Advanced Programmable Interrupt Controller or APIC, State controller and sharing a large cashe of memory for both processors.</p>
+<br>
+<p class="citetext">Sources<br>
+<a href="http://www.pcworld.com/" target="_blank">PC World</a><br>
+<a href="http://www.devx.com/" target="_blank">DevX.com</a><br>
+<a href="http://compreviews.about.com/" target="_blank">Compreviews.com</a><br>
+Image Sources<br>
+<a href="http://www.devx.com" target="_blank">DevX.com</a><br>
+<a href="http://www.trustedreviews.com/images/article/inline/1370-x21.jpg" target="_blank">Trusted Reviews</a><br></p>
+</body>

@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Blue Team!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="content-style-type" contect="text/css">
+<link rel="stylesheet" href="main.css" charset="iso-8859-1" type="text/css">
+<!-- #include file="var.inc" -->
+
+</head>
+<%
+select1 = Request.QueryString("num")
+If select1 ="" Then
+Response.Redirect "index.asp"
+End If
+%>
+<% 
+set con = Server.CreateObject("ADODB.Connection")
+con.Open "DBQ="& DbFile2 &";Driver={Microsoft Access Driver (*.mdb)};DriverId=25;FIL=MS Access;"
+sql="SELECT * FROM tblPWord WHERE (num) LIKE '" & select1 & "' ;"
+
+Set rs = Server.CreateObject("ADODB.Recordset")
+	rs.Open sql, con, 3, 3
+
+If rs.EOF Then
+Response.Redirect "index.asp"
+End If
+%>
+<body bgcolor="#000000">
+<img src="_images/_mainmenu/logo_sac.gif" border="0" alt="Welcome">
+<table border="0" cellpadding="0" cellspacing="0"  width="700" bgcolor="#000000" height="25">
+<tr>
+<td width="75" height="25"><img src="_images/sac_menu.gif"></td>
+<td align="left" valign="top"><p class="menuon">
+<a href="view_sac.asp?num=<%=rs.Fields("num").Value %>" class="menu" onMouseOver="window.status='SAC - Main'; return true" onMouseOut="window.status='';return true">_sac</a>
+| <a href="view_mb.asp?num=<%=rs.Fields("num").Value %>" class="menu" onMouseOver="window.status='The Messageboard'; return true" onMouseOut="window.status='';return true">_messageboard</a>
+| <a href="view_events.asp?num=<%=rs.Fields("num").Value %>" class="menu" onMouseOver="window.status='The Events'; return true" onMouseOut="window.status='';return true">_events</a>
+| <a href="view_acc.asp?num=<%=rs.Fields("num").Value %>" class="menu" onMouseOver="window.status='Your Account'; return true" onMouseOut="window.status='';return true">_account</a>
+| <a href="view_chapter.asp?num=<%=rs.Fields("num").Value %>" class="menu" onMouseOver="window.status='The Chapters - Main'; return true" onMouseOut="window.status='';return true">_chapters</a>
+| <a href="view_roster.asp?num=<%=rs.Fields("num").Value %>" class="menu" onMouseOver="window.status='The Roster'; return true" onMouseOut="window.status='';return true">_roster</a>
+|<img src="_images/leftarrow.gif" align="absmiddle"><b>Blue Team!</b><img src="_images/rightarrow.gif" align="absmiddle">
+| <a href="view_policy.asp?num=<%=rs.Fields("num").Value %>" class="menu" onMouseOver="window.status='Policy'; return true" onMouseOut="window.status='';return true">_policy</a></td>
+</tr>
+</table>
+<table background="_banners/binary_back.gif" width="800" border="2" cellpadding="0" cellspacing="0">
+<tr><td bgcolor="#335A99" valign="top" bordercolor="#C0C0C0" border="2">
+<h3 class="bodygrey">Hello, <%=rs.Fields("FName").Value %></h3>
+<table align="center">
+<tr>
+<td valign="top" width="200">
+<table bgcolor="#000000" border="2" bordercolor="#000000" width="200">
+<tr><td align="center" valign="top"><img src="_images/_bt/hos.gif"></td></tr>
+<tr><td bgcolor="#A67C52" valign="top">
+<p class="bodytext">
+-[Bio]<br>
+-Term: 2002-current<br>
+-Name: Patrick Trinkle<br>
+-Side Occupation: Student (_UMBC)<br>
+-Dictator
+</p></td></tr>
+</table>
+</td>
+<td valign="top" width="50"></td>
+<td valign="top" width="200">
+<table bgcolor="#000000" border="2" bordercolor="#000000" width="200">
+<tr><td align="center" valign="top"><img src="_images/sac_news.gif"></td></tr>
+<tr><td bgcolor="#A67C52" valign="top">
+<p class="bodytext">
+If we have news, it might go here.<br>
+-Everyone has been flushed, new members should find something to do. We need a purser.
+</p></td></tr>
+</table>
+</td>
+<td valign="top" width="50"></td>
+<td valign="top" width="200">
+<table bgcolor="#000000" border="2" bordercolor="#000000" width="200">
+<tr><td align="center" valign="top"><img src="_images/_bt/cpr.gif"></td></tr>
+<tr><td bgcolor="#1E1E56" valign="top">
+<p class="bodygrey">
+-[Bio]<br>
+-Term: 2003-current<br>
+-Name: Susan Hamer<br>
+-Side Occupation: Student (_Salisbury)<br>
+-Ha!
+</p></td></tr>
+</table>
+</td>
+</tr>
+</table><br><br>
+<table align="center">
+<tr>
+<td valign="top" width="200">
+<table bgcolor="#000000" border="2" bordercolor="#000000" width="200">
+<tr><td align="center" valign="top"><img src="_images/_bt/sacao.gif"></td></tr>
+<tr><td bgcolor="#A67C52" valign="top">
+<p class="bodytext">
+-[Bio]<br>
+-Term: 2003-Current<br>
+-Name: Mike Eaton (_E-man)<br>
+-Side Occupation: Student (_Webb)<br>
+-Is the Webb Chapter</p></td></tr>
+</table>
+</td>
+<td valign="top" width="50"></td>
+<td valign="top" width="200">
+<table bgcolor="#000000" border="2" bordercolor="#000000" width="200">
+<tr><td align="center" valign="top"><img src="_images/sac_links.gif"></td></tr>
+<tr><td bgcolor="#1E1E56" valign="top">
+<p class="bodygrey">
+Links you might enjoy:<br>
+<a href="http://www.thinkgeek.com" target="_blank" class="mblist">Think Geek</a> |
+<a href="http://www.actsofgord.com" target="_blank" class="mblist">Acts of Gord</a> |
+<a href="http://www.muvico.com" target="_blank" class="mblist">My Refuge</a>
+</p></td></tr>
+</table>
+</td>
+<td valign="top" width="50"></td>
+<td valign="top" width="200">
+<table bgcolor="#000000" border="2" bordercolor="#000000" width="200">
+<tr><td align="center" valign="top"><img src="_images/_bt/dhos.gif"></td></tr>
+<tr><td bgcolor="#1E1E56" valign="top">
+<p class="bodygrey">
+-[Bio]<br>
+-Term: 2003-current<br>
+-Name: Brad Glinka<br>
+-Side Occupation: Bum<br>
+-Vere is da stone?
+</p></td></tr>
+</table>
+</td>
+</tr>
+</table>
+
+<p class="bodygrey" align="center">Email <a href="mailto:sac@1shoe.net" class="org">SAC</a> to get things done.</p>
+
+
+</td></tr>
+<tr>
+<td bordercolor="#000000">
+<img src="_banners/oneshoe_lownews.gif" border="0" alt="OneShoeProgramming tampered with this Database">
+</td>
+</tr>
+</table>
+<!-- #include file="footer.inc" -->
+
+
+
+</body>
+</html>

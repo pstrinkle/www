@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="content-style-type" contect="text/css">
+<link rel="stylesheet" href="main.css" charset="iso-8859-1" type="text/css">
+
+<!-- #include file="var.inc" -->
+<%
+Dim select1
+
+select1 = Request.QueryString("num")
+%>
+</head>
+<body bgcolor="#000000">
+<%
+If select1 = "-" Then
+select1 = ""
+End If
+
+%>
+<% 
+set con = Server.CreateObject("ADODB.Connection")
+con.Open "DBQ="& DbFile2 &";Driver={Microsoft Access Driver (*.mdb)};DriverId=25;FIL=MS Access;"
+sql="SELECT * FROM tblPWord WHERE (num) LIKE '" & select1 & "' ;"
+
+Set rs = Server.CreateObject("ADODB.Recordset")
+	rs.Open sql, con, 3, 3
+
+If rs.EOF Then
+Response.Redirect "index.asp"
+End If
+
+select2 = rs.Fields("LName").Value
+If select2 <> "Trinkle" Then
+Response.Redirect "index.asp"
+End If
+
+%>
+
+<img src="_images/_mainmenu/logo_sac.gif" border="0" alt="Welcome">
+<table border="0" cellpadding="0" cellspacing="0"  width="700" bgcolor="#000000" height="25">
+<tr>
+<td width="75" height="25"><img src="_images/sac_menu.gif"></td>
+<td align="left" valign="top"><p class="menuon">
+<img src="_images/leftarrow.gif" align="absmiddle"><b>administrator controls</b><img src="_images/rightarrow.gif" align="absmiddle">
+</td>
+</tr>
+</table>
+<table background="_banners/binary_back.gif" width="800" border="2" cellpadding="0" cellspacing="0">
+<tr><td bgcolor="#335A99" valign="top" bordercolor="#C0C0C0" border="2">
+<h3 class="bodygrey">Welcome, <%=rs.Fields("FName").Value %> to the Members Control Center</h3>
+<table align="center" valign="top" width="750"><tr>
+<td valign="top">
+<table><tr><td valign="top">
+<table border="2" bordercolor="#000000" align="left" width="250" bgcolor="#000000">
+<%
+set con2 = Server.CreateObject("ADODB.Connection")
+con2.Open "DBQ="& DbFile2 &";Driver={Microsoft Access Driver (*.mdb)};DriverId=25;FIL=MS Access;"
+sql2="SELECT * FROM tblPWord ORDER BY ID DESC;"
+
+Set rs2 = Server.CreateObject("ADODB.Recordset")
+	rs2.Open sql2, con2, 3, 3
+%>
+<form action="eng_delmember.asp" method="post" name="form">
+<tr><td valign="top" align="center"><img src="_images/_admin/deletebar.gif"></td></tr>
+<tr>
+<td bgcolor="#1E1E56" valign="top">
+<select name="strMessage">
+<%	
+rs2.MoveFirst
+While Not rs2.EOF
+%>
+<option>
+<%=rs2.Fields("LName").Value %> - <%=rs2.Fields("ID").Value %>
+</option>
+<%
+	rs2.MoveNext 
+Wend
+%>
+</select><br>
+<input name="strID" type="text">
+<input name="strNum" type="hidden" value="<%=select1 %>">
+</td></tr>
+<tr>
+<td align="right">
+<input name="btnWords" type="image" value="eng_delmember.asp" src="_images/_admin/delete.gif" alt="Delete!"></td></tr>
+</form>
+</table>
+</td></tr>
+<tr><td valign="top">
+<table border="2" bordercolor="#000000" align="left" width="250" bgcolor="#000000">
+<form action="view_admin_edit_member.asp?num=<%=rs.Fields("num").Value %>" method="post" name="form2">
+<tr><td valign="top" align="center"><img src="_images/_admin/editbar.gif"></td></tr>
+<tr>
+<td bgcolor="#1E1E56" valign="top">
+<select name="strMessage">
+<%	
+rs2.MoveFirst
+While Not rs2.EOF
+%>
+<option>
+<%=rs2.Fields("LName").Value %> - <%=rs2.Fields("ID").Value %>
+</option>
+<%
+	rs2.MoveNext 
+Wend
+%>
+</select><br>
+<input name="strID" type="text">
+</td></tr>
+<tr>
+<td align="right">
+<input name="btnWords" type="image" value="view_admin_edit_member.asp?num=<%=rs.Fields("num").Value %>" src="_images/_admin/edit.gif" alt="Delete!"></td></tr>
+</form>
+</table>
+</td></tr></table>
+</td>
+<td valign="top">
+<table border="2" bordercolor="#000000" align="left" width="500" bgcolor="#000000">
+<form action="eng_addmember.asp" method="post" name="form1">
+<tr><td valign="top" align="center" colspan="2"><img src="_images/_admin/addnewbar.gif"></td></tr>
+<tr bordercolor="#000000" bgcolor="#CCCCCC">
+<td><p class="bodytext" align="center">Login:</p></td>
+<td><input name="strLogin" type="text" value=""></td>
+</tr>
+<tr bordercolor="#000000" bgcolor="#CCCCCC">
+<td><p class="bodytext" align="center">Password:</p></td>
+<td><input name="strPWord" type="text" value=""></td>
+</tr>
+<tr bordercolor="#000000" bgcolor="#CCCCCC">
+<td><p class="bodytext" align="center">Last Name:</p></td>
+<td><input name="strLName" type="text" value=""></td>
+</tr>
+<tr bordercolor="#000000" bgcolor="#CCCCCC">
+<td><p class="bodytext" align="center">First Name:</p></td>
+<td><input name="strFName" type="text" value=""></td>
+</tr>
+<tr bordercolor="#000000" bgcolor="#CCCCCC">
+<td><p class="bodytext" align="center">Home:</p></td>
+<td><input name="strPhone" type="text" value=""></td>
+</tr>
+<tr bordercolor="#000000" bgcolor="#CCCCCC">
+<td><p class="bodytext" align="center">Cell:</p></td>
+<td><input name="strCell" type="text" value=""></td>
+</tr>
+<tr bordercolor="#000000" bgcolor="#CCCCCC">
+<td><p class="bodytext" align="center">AIM SN:</p></td>
+<td><input name="strAIM_SN" type="text" value=""></td>
+</tr>
+<tr bordercolor="#000000" bgcolor="#CCCCCC">
+<td><p class="bodytext" align="center">Email:</p></td>
+<td><input name="strEmail" type="text" value=""></td>
+</tr>
+<tr bordercolor="#000000" bgcolor="#CCCCCC">
+<td><p class="bodytext" align="center">Control Number:</p></td>
+<td><input name="strNum" type="text" value=""></td>
+</tr>
+<tr bordercolor="#000000" bgcolor="#CCCCCC">
+<td><p class="bodytext" align="center">Position/Title:</p></td>
+<td><input name="strPos" type="text" value=""></td>
+</tr>
+<tr bordercolor="#000000" bgcolor="#CCCCCC">
+<td><p class="bodytext" align="center">Quote:</p></td>
+<td><input name="strQuote" type="text" value="" size="50"></td>
+</tr>
+<tr bordercolor="#000000" bgcolor="#CCCCCC">
+<td><p class="bodytext" align="center">Bio:</p></td>
+<td><textarea name="strBio" cols="30"></textarea></td>
+</tr>
+<tr bordercolor="#000000" bgcolor="#CCCCCC">
+<td><p class="bodytext" align="center">Team:</p></td>
+<td><input name="strTeam" type="text" value=""></td>
+</tr>
+<tr bordercolor="#000000" bgcolor="#CCCCCC">
+<td><p class="bodytext" align="center">View Restricted?:</p></td>
+<td><input name="strRes" type="text" value="">
+<input name="strMyNum" type="hidden" value="<%=select1 %>"></td></tr>
+<tr><td align="right" colspan="2">
+<input name="btnWords" type="image" value="eng_addmember.asp" src="_images/_admin/addnew.gif" alt="Post!">
+</td></tr>
+</form>
+</table>
+</td>
+</tr>
+
+</table>
+
+<br><br>
+</td></tr>
+<tr>
+<td bordercolor="#000000">
+<img src="_banners/oneshoe_lownews.gif" border="0" alt="OneShoeProgramming tampered with this Database">
+</td>
+</tr>
+</table>
+<%
+rs2.Close
+con2.Close
+Set rs2 = Nothing
+Set con2 = Nothing
+%>
+<!-- #include file="footer.inc" -->
+
+
+</body>
+</html>

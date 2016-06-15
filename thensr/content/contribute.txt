@@ -1,0 +1,14 @@
+<div class="mainheader">contribute</div>
+		<div class="boxitem">
+		<p class="body">Currently we don't have a paypal account. 
+                    If you personally know someone on the team, you can write 
+                    them a check or give them cash, which will be put into the 
+                    NSR pool. You may be surprised to know that the NSR is run 
+                    out of our pockets at a significant loss. We would greatly 
+                    appreciate it everyone who enjoys our content will contribute 
+                    and therefore help the continuation of this site.<br>
+                    <br>&nbsp;&nbsp;Thanks,<br>&nbsp;&nbsp;&nbsp;&nbsp;thensr Team</p><br>
+			</div>
+<br><br>
+
+
