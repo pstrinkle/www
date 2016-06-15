@@ -5,4 +5,4 @@ Old websites I built
 
 ## thensr - online publication platform and site I developed in college
 
-## removeforcontent - 
+## removeforcontent - follow-on to thensr I developed
